@@ -1,17 +1,26 @@
 #include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
 /**
- * main - Entry point
- * priniting lower case alphabets
- * Return: zero sucess
+ * main - starting point
+ * comparing numbers
+ * Return: 0 for success code runnig
  */
 int main(void)
 {
-	char a;
+	int n;
+	int x;
 
-	for (a = 97; a = 122; a++)
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	x = n % 10;
+	if (x < 6 && x != 0)
 	{
-		putchar(a);
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, x);
 	}
-	putchar('\n');
+	else
+	{
+		printf("Last digit of %d is %d and is 0\n", n, x);
+	}
 	return (0);
 }
